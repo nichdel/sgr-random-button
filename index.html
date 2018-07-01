@@ -41,11 +41,17 @@ function sGR() {
     console.log(d);
     window.open("http://www.scarygoround.com/sgr/ar.php?date="+cleanDate(d));
 }
+	
+function anySeries() {
+	options = [sGR, badMachinery, wenTack];
+	options[Math.floor(Math.random()*options.length)]();
+}
 
 </script>
 
 If the page is blank it's because the random script chose a day that had no update. <br>
 
+<button onclick="anySeries()">Any Series!</button>
 <button onclick="wenTack()">WenTack!</button>
 <button onclick="badMachinery()">Bad Machinery!</button>
 <button onclick="sGR()">Scary Go Round!</button>
