@@ -1,11 +1,54 @@
-<button onclick="console.log(randomDate(start, end))">Click me</button>
-
-
+<!DOCTYPE html>
+<html>
+<body>
 <script>
-start = new Date(2001, 0, 1)
-end = new Date()
 
 function randomDate(start, end) {
-    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
+
+function cleanDate(date) {
+	cleaned = String(d.getFullYear())
+    month = date.getMonth() + 1
+    cleaned += ("0" + month).slice(-2) // This concats a 0 if needed
+    cleaned += ("0" + d.getDate()).slice(-2)
+    return cleaned
+}
+
+function wenTack() {
+    start = new Date(2018, 0, 1);
+    end = new Date(2018, 5, 29);
+    
+    d = randomDate(start, end);
+    console.log(d);
+    window.open("http://www.scarygoround.com/?date="+cleanDate(d));
+}
+
+function badMachinery() {
+	start = new Date(2009, 8, 21);
+	end = new Date(2017, 3, 6);
+    
+    d = randomDate(start, end);
+    console.log(d);
+    window.open("http://scarygoround.com/badmachinery/index.php?date="+cleanDate(d));
+}
+
+function sGR() {
+	start = new Date(2002, 5, 4);
+    end = new Date(2009, 8, 11);
+    
+    d = randomDate(start, end);
+    console.log(d);
+    window.open("http://www.scarygoround.com/sgr/ar.php?date="+cleanDate(d));
+}
+
 </script>
+
+If the page is blank it's because the random script chose a day that had no update. <br>
+
+<button onclick="wenTack()">WenTack!</button>
+<button onclick="badMachinery()">Bad Machinery!</button>
+<button onclick="sGR()">Scary Go Round!</button>
+
+</body>
+</html>
