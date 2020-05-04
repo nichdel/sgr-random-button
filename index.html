@@ -26,7 +26,7 @@ function wenTack() {
 
 function badMachinery() {
 	start = new Date(2009, 8, 21);
-	end = new Date(2017, 3, 6);
+	end = new Date(2017, 4, 6);
     
     d = randomDate(start, end);
     console.log(d);
@@ -34,7 +34,7 @@ function badMachinery() {
 }
 
 function sGR() {
-	start = new Date(2002, 5, 4);
+    start = new Date(2002, 5, 4);
     end = new Date(2009, 8, 11);
     
     d = randomDate(start, end);
@@ -42,8 +42,17 @@ function sGR() {
     window.open("http://www.scarygoround.com/sgr/ar.php?date="+cleanDate(d));
 }
 	
+function newBobbins() {
+	start = new Date(2013, 11, 1);
+	end = new Date(2017, 12, 29);
+    
+	d = randomDate(start, end);
+	console.log(d);
+	window.open("http://www.scarygoround.com/bobbins/?date="+cleanDate(d));
+}
+	
 function anySeries() {
-	options = [sGR, badMachinery, wenTack];
+	options = [sGR, badMachinery, wenTack, newBobbins];
 	options[Math.floor(Math.random()*options.length)]();
 }
 
